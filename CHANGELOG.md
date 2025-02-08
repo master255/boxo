@@ -14,37 +14,19 @@ The following emojis are used to highlight certain changes:
 
 ## [Unreleased]
 
-### Added
-
-### Changed
-
-### Removed
-
-### Fixed
-
-### Security
-
 ## [0.10.1] - 2023-06-19
 
 ### Added
 
-None.
-
 ### Changed
 
-None.
-
 ### Removed
-
-None.
 
 ### Fixed
 
 - Allow CAR requests with a path when `DeserializedResponses` is `false`.
 
 ### Security
-
-None.
 
 ## [0.10.0] - 2023-06-09
 
