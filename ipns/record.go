@@ -256,12 +256,12 @@ func processOptions(opts ...Option) *options {
 // the public key, such as RSA and ECDSA key types. This can be changed with the
 // option [WithPublicKey]. In addition, records are, by default created with V1
 // compatibility.
-func NewRecord(sk ic.PrivKey, value path.Path, seq uint64, eol time.Time, ttl time.Duration, opts ...Option) (*Record, error) {
-	return newRecord(sk, []byte(value.String()), seq, eol, ttl, opts...)
-}
+// func NewRecord(sk ic.PrivKey, value path.Path, seq uint64, eol time.Time, ttl time.Duration, opts ...Option) (*Record, error) {
+// 	return newRecord(sk, []byte(value.String()), seq, eol, ttl, opts...)
+// }
 
 // newRecord is a private version of NewRecord that allows arbitrary []byte values (used internally for testing)
-func newRecord(sk ic.PrivKey, value []byte, seq uint64, eol time.Time, ttl time.Duration, opts ...Option) (*Record, error) {
+func NewRecord(sk ic.PrivKey, value []byte, seq uint64, eol time.Time, ttl time.Duration, opts ...Option) (*Record, error) {
 	options := processOptions(opts...)
 
 	node, err := createNode(value, seq, eol, ttl)
