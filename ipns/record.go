@@ -183,7 +183,7 @@ func (rec *Record) PubKey() (ic.PubKey, error) {
 	return nil, ErrPublicKeyNotFound
 }
 
-func (rec *Record) getBytesValue(key string) ([]byte, error) {
+func (rec *Record) GetBytesValue(key string) ([]byte, error) {
 	node, err := rec.node.LookupByString(key)
 	if err != nil {
 		return nil, multierr.Combine(ErrInvalidRecord, err)
