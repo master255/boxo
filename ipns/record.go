@@ -90,7 +90,7 @@ func MarshalRecord(rec *Record) ([]byte, error) {
 // If the value is a binary CID, it is converted to a [path.Path].
 // If the value is empty, a [NoopValue] is used instead.
 func (rec *Record) Value() (path.Path, error) {
-	value, err := rec.getBytesValue(cborValueKey)
+	value, err := rec.GetBytesValue(cborValueKey)
 	if err != nil {
 		return nil, err
 	}
@@ -142,7 +142,7 @@ func (rec *Record) Validity() (time.Time, error) {
 
 	switch validityType {
 	case ValidityEOL:
-		value, err := rec.getBytesValue(cborValidityKey)
+		value, err := rec.GetBytesValue(cborValidityKey)
 		if err != nil {
 			return time.Time{}, err
 		}
